@@ -138,7 +138,15 @@ span{
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
   box-shadow: 0 6px 4px hsla(0, 0%, 1%, .1);
+  border: 1px solid transparent;
   transition: .6s;
+  width: 160px;
+}
+
+.button:hover{
+  color: var(--soft-blue-color);
+  background-color: var(--white-color);
+  border-color: var(--soft-blue-color);
 }
 
 .handle::after{
@@ -153,9 +161,12 @@ span{
 }
 
 .data{
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: var(--mb-2);
-  margin: 0 var(--mb-1) var(--mb-1) var(--mb-3);
+  margin: 0 var(--mb-1) var(--mb-3) var(--mb-1);
 }
 
 /*=============== LAYOUT ===============*/
@@ -326,10 +337,6 @@ nav{
   gap: var(--mb-1);
 }
 
-.home__button{
-  border: 1px solid transparent;
-}
-
 .home__button:nth-child(2){
   color: var(--title-alt-color);
   background-color: var(--text-alt-color);
@@ -353,11 +360,41 @@ nav{
 }
 
 .features__filter{
-  font-size: var(--h3-font-size);
   display: flex;
   flex-direction: column;
-  gap: var(--mb-2);
-  margin: var(--mb-3) 0;
+  margin-bottom: 5rem;
+}
+
+.features__item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-regular);
+  padding: var(--mb-1) 0;
+}
+
+.features__item{
+  align-self: center;
+  cursor: pointer;
+  width: 80%;
+  transition: .4s;
+}
+
+.features__item:hover{
+  color: var(--soft-red-color);
+}
+
+.features__item:nth-child(1),
+.features__item:nth-child(3){
+  border-bottom: 2px solid;
+  border-top: 2px solid;
+  border-color: hsl(0, 0%, 90%);
+}
+
+.features__card{
+  display: grid;
+  gap: var(--mb-3);
 }
 
 .features__handle{
@@ -372,4 +409,19 @@ nav{
 .features__img{
   width: 280px;
   z-index: var(--z-tooltip);
+}
+
+.active-link{
+  color: var(--title-color);
+}
+
+.active-link::after{
+  position: absolute;
+  content: '';
+  display: block;
+  height: 4px;
+  width: 150px;
+  background: var(--soft-red-color);
+  transform: translate(0, 28px);
+  left: calc(50% - 150px / 2);
 }
