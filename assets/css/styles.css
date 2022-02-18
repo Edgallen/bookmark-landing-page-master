@@ -111,15 +111,22 @@ img{
   max-width: 100%;
 }
 
+span{
+  line-height: 1.6rem;
+  text-align: center;
+  margin: 0 var(--mb-1);
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section{
   padding: 0;
+  margin-bottom: 5rem;
 }
 
 .section__title{
-  font-size: var(--big-font-size);
   text-align: center;
-  margin-bottom: var(--mb-2-5);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
 }
 
 .button{
@@ -132,6 +139,23 @@ img{
   font-weight: var(--font-medium);
   box-shadow: 0 6px 4px hsla(0, 0%, 1%, .1);
   transition: .6s;
+}
+
+.handle::after{
+  content: '';
+  position: absolute;
+  right: 0%;
+  width: 163px;
+  height: 279px;
+  background-color: var(--soft-blue-color);
+  border-radius: 0rem 0rem 10rem 10rem;
+  box-shadow: 5px 60px 4px rgba(148, 148, 148, 0.050);
+}
+
+.data{
+  display: grid;
+  gap: var(--mb-2);
+  margin: 0 var(--mb-1) var(--mb-1) var(--mb-3);
 }
 
 /*=============== LAYOUT ===============*/
@@ -200,16 +224,12 @@ nav{
   padding: var(--mb-1-5) 0;
 }
 
-.nav__item:nth-child(1),
-.nav__item:nth-child(2),
-.nav__item:nth-child(3),
-.nav__item:nth-child(4){
+.nav__item{
   width: 80%;
 }
 
 .nav__item:nth-child(1),
 .nav__item:nth-child(3){
-  width: 80%;
   border-bottom: 1px solid;
   border-top: 1px solid;
   border-color: var(--text-color);
@@ -280,25 +300,34 @@ nav{
   gap: var(--mb-3);
 }
 
-.home__data{
-  display: grid;
-  gap: var(--mb-2);
-  margin: 0 var(--mb-1);
+.home__handle{
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--mb-3);
 }
 
-.home__title{
-  text-align: center;
-  font-size: var(--h1-font-size);
+.handle:nth-child(1):after{
+  transform: rotate(90deg) translate(-25px, 58px);
+}
+
+.home__img{
+  width: 280px;
+  z-index: var(--z-tooltip);
 }
 
 .home__description{
   text-align: center;
+  margin: 0 var(--mb-1);
 }
 
 .home__buttons{
   display: flex;
   justify-content: center;
   gap: var(--mb-1);
+}
+
+.home__button{
+  border: 1px solid transparent;
 }
 
 .home__button:nth-child(2){
@@ -309,11 +338,38 @@ nav{
 .home__button:nth-child(1):hover{
   color: var(--soft-blue-color);
   background-color: var(--white-color);
-  border: 1px solid var(--soft-blue-color);
+  border-color: var(--soft-blue-color);
 }
 
 .home__button:nth-child(2):hover{
   color: var(--title-color);
   background-color: var(--white-color);
-  border: 1px solid var(--title-color);
+  border-color: var(--title-color);
+}
+
+/*=============== FEATURES ===============*/
+.features{
+  position: relative;
+}
+
+.features__filter{
+  font-size: var(--h3-font-size);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mb-2);
+  margin: var(--mb-3) 0;
+}
+
+.features__handle{
+  display: flex;
+  justify-content: center;
+}
+
+.handle:after:nth-child(2){
+  transform: rotate(90deg) translate(-500px, 58px);
+}
+
+.features__img{
+  width: 280px;
+  z-index: var(--z-tooltip);
 }
