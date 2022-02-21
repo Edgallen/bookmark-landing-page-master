@@ -25,6 +25,28 @@ if(navClose){
 function scrollHeader(){
     const header = document.getElementById('header')
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
-    if(this.scrollY >= 50) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
-  }
-  window.addEventListener('scroll', scrollHeader)
+    this.scrollY >= 50 ? header.classList.add('scroll-header') : header.classList.remove('scroll-header');
+}
+window.addEventListener('scroll', scrollHeader);
+
+/*=============== FEATURES SORTING ===============*/
+const featuresItems = document.querySelectorAll('.features__item');
+const featuresCards = document.querySelectorAll('.features__card');
+
+for (i = 0; i < featuresItems.length; i++) {
+
+    featuresItems[i].addEventListener('click', (e) => {
+        e.preventDefault()
+        
+        const filter = e.target.dataset.filter;
+        console.log(filter);
+        
+        featuresCards.forEach((card)=> { 
+            if (card.classList.contains(filter)){
+                card.style.display = 'grid'
+            } else {
+                card.style.display = 'none'
+            }
+        });
+    });
+};

@@ -10,7 +10,7 @@
   --title-alt-color: hsl(232, 8%, 38%);
   --text-color: hsl(229, 8%, 60%);
   --text-alt-color: hsl(0, 0%, 97%);
-  --scroll-color: hsla(230, 52%, 15%, 0.5);
+  --scroll-color: hsla(0, 0%, 100%, 0.8);
   --transparent-bg-color: hsla(230, 52%, 15%, 0.9);
 
   --button-shadow-color: hsla(229, 8%, 60%, 0.2);
@@ -398,8 +398,12 @@ nav{
 }
 
 .features__card{
-  display: grid;
+  display: none;
   gap: var(--mb-3);
+}
+
+.features__card:nth-child(1){
+  display: grid;
 }
 
 .features__handle{
