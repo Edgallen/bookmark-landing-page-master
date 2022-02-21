@@ -10,7 +10,7 @@
   --title-alt-color: hsl(232, 8%, 38%);
   --text-color: hsl(229, 8%, 60%);
   --text-alt-color: hsl(0, 0%, 97%);
-  --scroll-color: hsl(212, 27%, 19%, 0.5);
+  --scroll-color: hsla(230, 52%, 15%, 0.5);
   --transparent-bg-color: hsla(230, 52%, 15%, 0.9);
 
   --button-shadow-color: hsla(229, 8%, 60%, 0.2);
@@ -187,6 +187,7 @@ span{
   z-index: var(--z-fixed);
   background: transparent;
   transition: .4s;
+  padding: var(--mb-1) 0;
 }
 
 .scroll-header{
@@ -271,7 +272,7 @@ nav{
 .nav__logo-alt{
   position: absolute;
   top: 0%;
-  margin: var(--header-height) 0 0 var(--mb-1);
+  margin: var(--mb-1) 0 0 var(--mb-1);
 }
 
 .nav__close{
@@ -280,7 +281,7 @@ nav{
   height: 18px;
   right: 0%;
   top: 0%;
-  margin: calc(var(--header-height) + .3rem) var(--mb-2) 0 0;
+  margin: var(--mb-1-5) var(--mb-2) 0 0;
   z-index: var(--z-tooltip);
 }
 
@@ -299,6 +300,10 @@ nav{
 /* show menu */
 .show-menu{
   left: 0;
+}
+
+.hide{
+  display: none;
 }
 
 /*=============== HOME ===============*/
