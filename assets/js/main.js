@@ -38,14 +38,24 @@ for (i = 0; i < featuresItems.length; i++) {
     featuresItems[i].addEventListener('click', (e) => {
         e.preventDefault()
         
+        // Getting data-filter
         const filter = e.target.dataset.filter;
-        console.log(filter);
-        
+
+        // Changing selected card
         featuresCards.forEach((card)=> { 
             if (card.classList.contains(filter)){
-                card.style.display = 'grid'
+                card.style.display = 'grid';
             } else {
-                card.style.display = 'none'
+                card.style.display = 'none';
+            }
+        });
+
+        // Selecting active link
+        featuresItems.forEach((item)=> { 
+            if (item.classList.contains(filter)){
+                item.classList.add('active-link');
+            } else {
+                item.classList.remove('active-link');
             }
         });
     });
