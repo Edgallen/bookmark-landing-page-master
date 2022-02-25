@@ -426,6 +426,8 @@ nav{
   margin-top: var(--mb-3);
 }
 
+/* Active state */
+
 .active-link{
   color: var(--title-color);
   transition: .4s;
@@ -440,8 +442,11 @@ nav{
   background: var(--soft-red-color);
   transform: translate(0, 28px);
   left: calc(50% - 150px / 2);
-  transition: 1s !important;
+  transition: 1s;
+  /* visibility: hidden; */
 }
+
+
 
 /*=============== EXTENSIONS ===============*/
 .extensions__container{
@@ -486,4 +491,60 @@ nav{
 .extensions__button{
   width: 80%;
   margin-top: 0;
+}
+
+/*=============== QUESTIONS ===============*/
+.questions{
+  justify-items: center;
+}
+
+.questions__container{
+  margin: 0 var(--mb-2);
+  gap: var(--mb-2);
+}
+
+.questions__card{
+  border-bottom: 3px solid;
+  border-color: hsl(0, 0%, 90%);
+}
+
+.questions__question{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.questions__question-title{
+  font-size: 1.05rem;
+  font-weight: var(--font-medium);
+}
+
+.questions__toggle{
+  font-size: var(--big-font-size);
+  color: var(--soft-blue-color);
+  transition: .4s;
+  transition: transform 1s;
+}
+
+.questions__toggle:hover{
+  color: var(--soft-red-color);
+}
+
+.questions__answer{
+  text-align: start;
+  margin: var(--mb-1) var(--mb-2) var(--mb-1) 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: 1.4s ease-out;
+}
+
+/* Active state */
+.active-answer{
+  max-height: 350px;
+}
+
+.active-toggle{
+  color: var(--soft-red-color);
+  transform: rotate(180deg);
 }

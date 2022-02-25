@@ -60,3 +60,32 @@ for (i = 0; i < featuresItems.length; i++) {
         });
     });
 };
+
+/*=============== FAQ ===============*/
+const questions = document.getElementsByClassName('questions__card');
+
+for (i = 0; i < questions.length; i++) {
+    questions[i].addEventListener('click', (e) => {
+        let question;
+
+        // Shows answer if you click title or chevron
+        if (e.target.classList.contains('questions__toggle') || e.target.classList.contains('questions__question-title')){
+            question = e.target.parentElement.parentElement;
+
+            question.children[1].classList.toggle('active-answer'); 
+            //questions__answer
+            question.children[0].children[1].classList.toggle('active-toggle');
+            //questions__toggle
+
+        // Shows answer if you click on div 
+        // if it contains 'questions__card' it will add ('active-toggle') to answer
+        } else if (!e.target.classList.contains('questions__card')) { 
+            question = e.target.parentElement;
+            
+            question.children[1].classList.toggle('active-answer'); 
+            //questions__answer 
+            question.children[0].children[1].classList.toggle('active-toggle'); 
+            //questions__toggle
+        }
+    })
+}
