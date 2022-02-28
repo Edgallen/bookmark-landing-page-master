@@ -72,20 +72,38 @@ for (i = 0; i < questions.length; i++) {
         if (e.target.classList.contains('questions__toggle') || e.target.classList.contains('questions__question-title')){
             question = e.target.parentElement.parentElement;
 
-            question.children[1].classList.toggle('active-answer'); 
-            //questions__answer
-            question.children[0].children[1].classList.toggle('active-toggle');
-            //questions__toggle
+            question.children[1].classList.toggle('active-answer'); //questions__answer
+            question.children[0].children[1].classList.toggle('active-toggle'); //questions__toggle
 
         // Shows answer if you click on div 
         // if it contains 'questions__card' it will add ('active-toggle') to answer
         } else if (!e.target.classList.contains('questions__card')) { 
             question = e.target.parentElement;
             
-            question.children[1].classList.toggle('active-answer'); 
-            //questions__answer 
-            question.children[0].children[1].classList.toggle('active-toggle'); 
-            //questions__toggle
+            question.children[1].classList.toggle('active-answer'); //questions__answer
+            question.children[0].children[1].classList.toggle('active-toggle'); //questions__toggle
         }
     })
 }
+
+/*=============== EMAIL VALIDATION ===============*/
+const contactInput = document.querySelector('.contact__input');
+const contactButton = document.querySelector('.contact__button');
+const contactIcon = document.querySelector('.contact__icon');
+const contactMessage = document.querySelector('.contact__message');
+let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+contactButton.addEventListener('click', () => {
+    if(contactInput.value.match(validRegex)){
+        // add link to send email !!!
+        contactInput.classList.remove('input-error');
+        contactButton.classList.remove('button-error');
+        contactIcon.classList.remove('icon-error');
+        contactMessage.classList.remove('message-error');
+    } else {
+        contactInput.classList.add('input-error');
+        contactButton.classList.add('button-error');
+        contactIcon.classList.add('icon-error');
+        contactMessage.classList.add('message-error');
+    }
+})
