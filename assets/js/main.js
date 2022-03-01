@@ -8,7 +8,7 @@ const navMenu = document.getElementById('nav-menu'),
 if(navToggle){
     navToggle.addEventListener('click', () =>{
         navMenu.classList.add('show-menu');
-        navToggle.classList.add('hide')
+        navToggle.classList.add('hide');
     })
 }
 
@@ -17,13 +17,33 @@ if(navToggle){
 if(navClose){
     navClose.addEventListener('click', () =>{
         navMenu.classList.remove('show-menu');
-        navToggle.classList.remove('hide')
+        navToggle.classList.remove('hide');
     })
 }
 
+/*=============== REMOVE MENU MOBILE ===============*/
+const navLink = document.querySelectorAll('.nav__link');
+const navLogo = document.getElementById('nav-logo');
+console.log(navLogo);
+
+// When clicked on link
+function linkAction(){
+    const navMenu = document.getElementById('nav-menu')
+    // When we click on each nav__link, we remove the show-menu class
+    navMenu.classList.remove('show-menu');
+    navToggle.classList.remove('hide');
+};
+navLink.forEach(n => n.addEventListener('click', linkAction));
+
+// When clicked on logo
+navLogo.addEventListener('click', () => {
+    navMenu.classList.remove('show-menu');
+    navToggle.classList.remove('hide');
+})
+
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader(){
-    const header = document.getElementById('header')
+    const header = document.getElementById('header');
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
     this.scrollY >= 50 ? header.classList.add('scroll-header') : header.classList.remove('scroll-header');
 }
@@ -36,7 +56,7 @@ const featuresCards = document.querySelectorAll('.features__card');
 for (i = 0; i < featuresItems.length; i++) {
 
     featuresItems[i].addEventListener('click', (e) => {
-        e.preventDefault()
+        e.preventDefault();
         
         // Getting data-filter
         const filter = e.target.dataset.filter;
