@@ -315,7 +315,7 @@ nav{
 
 /*=============== HOME ===============*/
 .home{
-  margin-top: calc(var(--header-height) + 29px + var(--mb-2));
+  margin-top: calc(var(--header-height) + 29px + var(--mb-0-5));
   padding-bottom: var(--mb-1-5);
 }
 
@@ -326,23 +326,23 @@ nav{
 .home__handle{
   display: flex;
   justify-content: center;
-  margin-bottom: var(--mb-3);
+  margin-bottom: var(--mb-1);
 }
 
 .home__handle::after{
   content: '';
   position: absolute;
   right: 0%;
-  width: 200px;
-  height: 300px;
+  width: 180px;
+  height: 320px;
   background-color: var(--soft-blue-color);
   border-radius: 0rem 0rem 10rem 10rem;
   box-shadow: 5px 50px 4px rgba(148, 148, 148, 0.050);
-  transform: rotate(90deg) translate(8px, 51px);
+  transform: rotate(90deg) translate(-32px, 70px);
 }
 
 .home__img{
-  width: 350px;
+  width: 300px;
   z-index: var(--z-tooltip);
 }
 
