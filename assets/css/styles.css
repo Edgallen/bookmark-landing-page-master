@@ -159,7 +159,7 @@ span{
   justify-content: center;
   align-items: center;
   gap: var(--mb-1);
-  margin-bottom: var(--mb-2);
+  margin: 0 var(--mb-1) var(--mb-1) var(--mb-2);
 }
 
 /*=============== LAYOUT ===============*/
